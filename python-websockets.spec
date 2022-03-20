@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        10.0
-Release:        1
+Release:        2
 Summary:        An implementation of the WebSocket Protocol for python with asyncio
 Group:          Development/Python
 License:        BSD
