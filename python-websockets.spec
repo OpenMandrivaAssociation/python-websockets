@@ -38,5 +38,5 @@ rm -vf %{buildroot}%{python_sitearch}/%{pypi_name}/speedups.c
 %files
 %license LICENSE
 %doc README.rst
-%{python_sitearch}/%{pypi_name}-%{version}-py%{python_version}.egg-info/
+#{python_sitearch}/%{pypi_name}-%{version}-py%{python_version}.egg-info/
 %{python_sitearch}/%{pypi_name}/
