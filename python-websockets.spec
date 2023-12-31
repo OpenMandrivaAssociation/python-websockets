@@ -38,5 +38,5 @@ rm -vf %{buildroot}%{python_sitearch}/%{pypi_name}/speedups.c
 %files
 %license LICENSE
 %doc README.rst
-%{python_sitearch}/python*.*/site-packages/websockets-%{version}.dist-info
+%{python_sitearch}/websockets-%{version}.dist-info
 %{python_sitearch}/%{pypi_name}/
