@@ -1,7 +1,7 @@
 %global pypi_name websockets
 
 Name:           python-%{pypi_name}
-Version:        12.0
+Version:        14.1
 Release:        1
 Summary:        An implementation of the WebSocket Protocol for python with asyncio
 Group:          Development/Python
