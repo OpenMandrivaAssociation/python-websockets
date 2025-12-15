@@ -1,17 +1,19 @@
-%global pypi_name websockets
+%global module websockets
 
-Name:           python-%{pypi_name}
-Version:        14.1
+Name:           python-%{module}
+Version:        15.0.1
 Release:        1
 Summary:        An implementation of the WebSocket Protocol for python with asyncio
 Group:          Development/Python
-License:        BSD
+License:        BSD-3-Clause
 URL:            https://pypi.python.org/pypi/websockets
-Source0:        https://pypi.python.org/packages/source/w/websocket/%{pypi_name}-%{version}.tar.gz
-
-%{?python_provide:%python_provide python3-%{pypi_name}}
-BuildRequires:  pkgconfig(python)
-BuildRequires:  python3dist(setuptools)
+Source0:        https://pypi.python.org/packages/source/w/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+BuildSystem:	python
+BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description 
 websockets is a library for developing WebSocket servers and clients in\
@@ -23,9 +25,9 @@ provides an API based on coroutines, making it easy to write highly concurrent\
 applications.
 
 %prep
-%autosetup -n %{pypi_name}-%{version} -p1
+%autosetup -n %{module}-%{version} -p1
 # Remove upstream's egg-info
-rm -vrf %{pypi_name}.egg-info
+rm -vrf src/%{module}.egg-info
 
 %build
 %py_build
@@ -33,10 +35,11 @@ rm -vrf %{pypi_name}.egg-info
 %install
 %py_install
 # Remove installed C file
-rm -vf %{buildroot}%{python_sitearch}/%{pypi_name}/speedups.c
+rm -vf %{buildroot}%{python_sitearch}/%{module}/speedups.c
 
 %files
 %license LICENSE
 %doc README.rst
-%{python_sitearch}/websockets-%{version}.dist-info
-%{python_sitearch}/%{pypi_name}/
+%{_bindir}/%{module}
+%{python_sitearch}/%{module}
+%{python_sitearch}/%{module}-%{version}.dist-info
