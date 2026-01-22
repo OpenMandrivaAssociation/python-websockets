@@ -1,7 +1,7 @@
 %global module websockets
 
 Name:           python-%{module}
-Version:        15.0.1
+Version:        16.0
 Release:        1
 Summary:        An implementation of the WebSocket Protocol for python with asyncio
 Group:          Development/Python
@@ -24,16 +24,11 @@ Built on top of Python’s asynchronous I/O support introduced in PEP 3156, it\
 provides an API based on coroutines, making it easy to write highly concurrent\
 applications.
 
-%prep
-%autosetup -n %{module}-%{version} -p1
+%prep -a
 # Remove upstream's egg-info
 rm -vrf src/%{module}.egg-info
 
-%build
-%py_build
-
-%install
-%py_install
+%install -a
 # Remove installed C file
 rm -vf %{buildroot}%{python_sitearch}/%{module}/speedups.c
 
