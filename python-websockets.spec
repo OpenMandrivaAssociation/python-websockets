@@ -1,7 +1,7 @@
 %global module websockets
 
 Name:           python-%{module}
-Version:        16.0
+Version:        17.0.1
 Release:        1
 Summary:        An implementation of the WebSocket Protocol for python with asyncio
 Group:          Development/Python
