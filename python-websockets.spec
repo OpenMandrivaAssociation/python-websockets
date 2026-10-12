@@ -2,7 +2,7 @@
 
 Name:           python-%{module}
 Version:        17.0.1
-Release:        1
+Release:        2
 Summary:        An implementation of the WebSocket Protocol for python with asyncio
 Group:          Development/Python
 License:        BSD-3-Clause
